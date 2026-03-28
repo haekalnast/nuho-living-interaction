@@ -28,7 +28,7 @@ export default function HeroSection() {
   }, [next]);
 
   return (
-    <section className="relative w-full bg-white pt-2 pb-10 px-6 lg:px-10">
+    <section className="relative w-full bg-white pt-2 pb-[40px] px-6 lg:px-10">
       <div className="relative w-full h-[500px] sm:h-[600px] lg:h-[760px] rounded-[20px] overflow-hidden">
         {/* Images */}
         {heroImages.map((img, i) => (

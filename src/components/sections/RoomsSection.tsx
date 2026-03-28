@@ -51,15 +51,25 @@ export default function RoomsSection() {
         {/* Room preview */}
         <div className="flex flex-col gap-6">
           {/* Tabs */}
-          <div className="flex gap-4 lg:gap-6 overflow-x-auto pb-2 -mx-2 px-2">
+          <div
+            className="flex gap-4 lg:gap-6 overflow-x-auto pb-2 -mx-2 px-2"
+            role="tablist"
+            aria-label="Room types"
+          >
             {rooms.map((room, i) => (
               <button
                 key={room.name}
+                type="button"
+                role="tab"
+                id={`room-tab-${i}`}
+                aria-selected={i === active}
+                aria-controls="room-panel"
+                tabIndex={i === active ? 0 : -1}
                 onClick={() => handleRoomChange(i)}
-                className={`flex-1 min-w-[140px] py-4 px-4 rounded-[20px] text-center text-base lg:text-2xl font-normal transition-all whitespace-nowrap ${
+                className={`flex-1 min-w-[140px] p-4 rounded-[20px] text-center text-base lg:text-2xl font-normal transition-colors whitespace-nowrap ${
                   i === active
-                    ? "bg-primary text-white"
-                    : "bg-neutral-300 text-black hover:bg-neutral-200"
+                    ? "bg-primary text-white hover:bg-primary-dark"
+                    : "bg-neutral-300 text-black hover:bg-secondary-100 hover:text-white"
                 }`}
               >
                 {room.name}
@@ -68,7 +78,12 @@ export default function RoomsSection() {
           </div>
 
           {/* Image & description */}
-          <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[660px] rounded-[20px] overflow-hidden">
+          <div
+            id="room-panel"
+            role="tabpanel"
+            aria-labelledby={`room-tab-${active}`}
+            className="relative w-full h-[400px] sm:h-[500px] lg:h-[660px] rounded-[20px] overflow-hidden"
+          >
             <Image
               src={rooms[active].image}
               alt={rooms[active].name}

@@ -8,6 +8,7 @@ import GuidesSection from "@/components/sections/GuidesSection";
 import PropertiesSection from "@/components/sections/PropertiesSection";
 import CTABanner from "@/components/sections/CTABanner";
 import Footer from "@/components/Footer";
+import FloatingContactButton from "@/components/FloatingContactButton";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <PropertiesSection />
       <CTABanner />
       <Footer />
+      <FloatingContactButton />
     </main>
   );
 }

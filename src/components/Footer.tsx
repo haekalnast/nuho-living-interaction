@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { WHATSAPP_HREF } from "@/constants/contact";
 
 const footerLinks = [
   { label: "About Us", href: "#about" },
@@ -13,17 +14,17 @@ const socialLinks = [
   {
     icon: "/images/icon-instagram.svg",
     label: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/nuho.living/",
   },
   {
     icon: "/images/icon-whatsapp.svg",
     label: "WhatsApp",
-    href: "https://wa.me/628991828448",
+    href: WHATSAPP_HREF,
   },
   {
     icon: "/images/icon-google.svg",
     label: "Google",
-    href: "https://google.com",
+    href: "https://www.google.com/search?q=nuho%20living%20bali",
   },
 ];
 

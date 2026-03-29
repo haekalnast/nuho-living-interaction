@@ -62,7 +62,7 @@ function DiscoverCard({
       className="group box-border h-[585px] cursor-pointer rounded-[20px] p-[10px] lg:h-[720px]"
     >
       {/* 10px inset around photo only (Figma 272-6120); inner card padding unchanged */}
-      <div className="relative h-full min-h-0 overflow-hidden rounded-[10px]">
+      <div className="relative h-full min-h-0 overflow-hidden rounded-[20px]">
         <Image
           src={image}
           alt={title}

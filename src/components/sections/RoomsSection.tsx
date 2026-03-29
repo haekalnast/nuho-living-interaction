@@ -144,7 +144,7 @@ export default function RoomsSection() {
             />
 
             <div className="pointer-events-none absolute inset-0 flex flex-col justify-between p-[10px] lg:flex-row lg:items-end lg:justify-between lg:p-5">
-              <div className="pointer-events-auto flex w-full max-w-[338px] flex-col gap-4 self-start rounded-2xl bg-neutral-300 p-4 lg:max-w-[435px] lg:self-auto lg:p-8">
+              <div className="pointer-events-auto flex w-full max-w-none flex-col gap-4 self-start rounded-2xl bg-neutral-300 p-4 lg:max-w-[435px] lg:self-auto lg:p-8">
                 <p className="text-base leading-6 text-secondary-300">
                   {rooms[activeIndex].description}
                 </p>

@@ -59,9 +59,9 @@ function DiscoverCard({
   return (
     <div
       ref={rootRef}
-      className="group box-border h-[585px] cursor-pointer rounded-[20px] p-[10px] lg:h-[720px]"
+      className="group box-border h-[585px] cursor-pointer rounded-[20px] p-0 lg:h-[720px] lg:p-[10px]"
     >
-      {/* 10px inset around photo only (Figma 272-6120); inner card padding unchanged */}
+      {/* Mobile: no outer photo inset so image aligns with section 16px gutter like the title; lg: 10px inset per Figma */}
       <div className="relative h-full min-h-0 overflow-hidden rounded-[20px]">
         <Image
           src={image}

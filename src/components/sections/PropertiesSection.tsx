@@ -77,7 +77,7 @@ export default function PropertiesSection() {
                 </div>
 
                 <div className="flex min-w-0 flex-col gap-2">
-                  <h3 className="text-2xl leading-8 tracking-[-1px] text-black font-normal">
+                  <h3 className="text-[20px] leading-[28px] tracking-[-1px] text-black font-normal lg:text-2xl lg:leading-8">
                     {property.name}
                   </h3>
                   <p className="text-base leading-6 text-secondary-300 line-clamp-3">

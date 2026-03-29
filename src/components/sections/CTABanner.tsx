@@ -19,7 +19,7 @@ export default function CTABanner() {
 
         <div className="relative flex w-full max-w-[505px] flex-col gap-4 rounded-2xl bg-white p-6 lg:gap-6 lg:p-8">
           <div className="flex flex-col gap-4">
-            <h2 className="text-[32px] leading-[40px] font-normal tracking-[-1px] text-black">
+            <h2 className="text-[24px] leading-8 font-normal tracking-[-1px] text-black lg:text-[32px] lg:leading-[40px]">
               Stay at NUHO Living
             </h2>
             <p className="text-base leading-6 text-secondary-300">

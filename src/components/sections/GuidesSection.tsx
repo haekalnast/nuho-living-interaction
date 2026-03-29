@@ -62,7 +62,7 @@ export default function GuidesSection() {
                     {guide.date}
                   </p>
                   <div className="flex flex-col gap-4">
-                    <h3 className="text-2xl leading-8 tracking-[-1px] text-black font-normal">
+                    <h3 className="text-[20px] leading-[28px] tracking-[-1px] text-black font-normal lg:text-2xl lg:leading-8">
                       {guide.title}
                     </h3>
                     <p className="text-base leading-6 text-secondary-300 line-clamp-2">

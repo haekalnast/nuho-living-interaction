@@ -82,12 +82,12 @@ export default function Navbar() {
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 bg-white ${mobileOpen ? "max-h-[400px] border-t border-neutral-300" : "max-h-0"}`}
       >
-        <div className="flex flex-col gap-4 px-4 py-4 sm:px-6">
+        <div className="flex flex-col items-center gap-4 px-4 py-4 sm:px-6">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className="text-base text-neutral-500 py-2 leading-6"
+              className="block w-full text-center text-base text-neutral-500 py-2 leading-6"
               onClick={() => setMobileOpen(false)}
             >
               {link.label}

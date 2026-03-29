@@ -59,39 +59,42 @@ function DiscoverCard({
   return (
     <div
       ref={rootRef}
-      className="group relative h-[585px] cursor-pointer overflow-hidden rounded-[20px] lg:h-[720px]"
+      className="group box-border h-[585px] cursor-pointer rounded-[20px] p-[10px] lg:h-[720px]"
     >
-      <Image
-        src={image}
-        alt={title}
-        fill
-        className={`object-cover transition-transform duration-500 ${
-          inView ? "max-lg:scale-105" : "max-lg:scale-100"
-        } lg:scale-100 lg:group-hover:scale-105`}
-        sizes="(max-width: 1024px) 100vw, 50vw"
-      />
-      <div
-        className={`absolute inset-0 transition-all duration-500 ${
-          inView ? "max-lg:bg-black/20" : "max-lg:bg-black/0"
-        } lg:bg-black/0 lg:group-hover:bg-black/20`}
-      />
+      {/* 10px inset around photo only (Figma 272-6120); inner card padding unchanged */}
+      <div className="relative h-full min-h-0 overflow-hidden rounded-[10px]">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className={`object-cover transition-transform duration-500 ${
+            inView ? "max-lg:scale-105" : "max-lg:scale-100"
+          } lg:scale-100 lg:group-hover:scale-105`}
+          sizes="(max-width: 1024px) 100vw, 50vw"
+        />
+        <div
+          className={`absolute inset-0 transition-all duration-500 ${
+            inView ? "max-lg:bg-black/20" : "max-lg:bg-black/0"
+          } lg:bg-black/0 lg:group-hover:bg-black/20`}
+        />
 
-      <div
-        className={`absolute bottom-5 left-5 right-5 translate-y-[calc(100%-60px)] transition-transform duration-500 motion-reduce:translate-y-0 lg:group-hover:translate-y-0 ${
-          inView ? "max-lg:translate-y-0" : ""
-        }`}
-      >
-        <div className="flex flex-col gap-4 rounded-2xl bg-neutral-300 p-6 lg:p-8">
-          <h3 className="text-2xl leading-8 tracking-[-1px] text-black font-normal">
-            {title}
-          </h3>
-          <p
-            className={`text-base leading-6 text-secondary-300 transition-opacity delay-100 duration-500 motion-reduce:opacity-100 ${
-              inView ? "max-lg:opacity-100" : "max-lg:opacity-0"
-            } lg:opacity-0 lg:delay-100 lg:group-hover:opacity-100`}
-          >
-            {description}
-          </p>
+        <div
+          className={`absolute bottom-[10px] left-[10px] right-[10px] translate-y-[calc(100%-60px)] transition-transform duration-500 motion-reduce:translate-y-0 lg:bottom-5 lg:left-5 lg:right-5 lg:group-hover:translate-y-0 ${
+            inView ? "max-lg:translate-y-0" : ""
+          }`}
+        >
+          <div className="flex flex-col gap-4 rounded-2xl bg-neutral-300 p-6 lg:p-8">
+            <h3 className="text-2xl leading-8 tracking-[-1px] text-black font-normal">
+              {title}
+            </h3>
+            <p
+              className={`text-base leading-6 text-secondary-300 transition-opacity delay-100 duration-500 motion-reduce:opacity-100 ${
+                inView ? "max-lg:opacity-100" : "max-lg:opacity-0"
+              } lg:opacity-0 lg:delay-100 lg:group-hover:opacity-100`}
+            >
+              {description}
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -100,7 +103,7 @@ function DiscoverCard({
 
 export default function DiscoverSection() {
   return (
-    <section className="w-full bg-white px-6 lg:px-10 py-10">
+    <section className="w-full bg-white px-4 py-10 sm:px-6 lg:px-10">
       <div className="flex flex-col gap-10 lg:gap-12">
         <h2 className="text-[40px] leading-[56px] tracking-[-1px] text-black font-normal">
           Discover Bingin

@@ -5,7 +5,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="w-full bg-white px-6 lg:px-10 py-10"
+      className="w-full bg-white px-4 py-10 sm:px-6 lg:px-10"
     >
       <div className="flex flex-col gap-6 lg:min-h-[900px] lg:flex-row lg:gap-6 items-stretch">
         {/* Text — below image on mobile (Figma 2001-36359) */}

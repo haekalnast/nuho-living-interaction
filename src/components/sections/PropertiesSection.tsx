@@ -38,7 +38,7 @@ const properties = [
 
 export default function PropertiesSection() {
   return (
-    <section className="w-full bg-white px-6 lg:px-10 py-20">
+    <section className="w-full bg-white px-4 py-20 sm:px-6 lg:px-10">
       <div className="flex flex-col gap-10 lg:gap-12">
         <h2 className="text-[40px] leading-[56px] tracking-[-1px] text-black font-normal">
           Our Properties

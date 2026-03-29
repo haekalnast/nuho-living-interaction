@@ -3,7 +3,7 @@ import Button from "../ui/Button";
 
 export default function CTABanner() {
   return (
-    <section className="w-full bg-white px-6 lg:px-10 pb-10">
+    <section className="w-full bg-white px-4 pb-10 sm:px-6 lg:px-10">
       <div className="relative w-full rounded-[20px] overflow-hidden px-5 py-10 min-h-[300px] flex items-center">
         {/* Background image */}
         <Image

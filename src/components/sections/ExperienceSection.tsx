@@ -26,7 +26,7 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="w-full bg-white px-6 lg:px-10 pb-10"
+      className="w-full bg-white px-4 pb-10 sm:px-6 lg:px-10"
     >
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-4">
         {/* Left column - sticky heading */}

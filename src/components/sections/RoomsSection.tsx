@@ -51,7 +51,10 @@ export default function RoomsSection() {
   };
 
   return (
-    <section id="rooms" className="w-full bg-white px-6 lg:px-10 py-10">
+    <section
+      id="rooms"
+      className="w-full bg-white px-4 py-10 sm:px-6 lg:px-10"
+    >
       <div className="flex flex-col gap-10 lg:gap-12">
         {/* Heading */}
         <h2 className="text-[40px] leading-[56px] tracking-[-1px] text-black font-normal">
@@ -76,7 +79,7 @@ export default function RoomsSection() {
                 aria-controls="room-panel"
                 tabIndex={i === active ? 0 : -1}
                 onClick={() => handleRoomChange(i)}
-                className={`shrink-0 rounded-[20px] px-5 py-4 text-center text-base font-normal whitespace-nowrap transition-colors lg:px-6 lg:text-2xl ${
+                className={`flex min-h-[52px] w-[248px] shrink-0 items-center justify-center rounded-[20px] px-3 py-3 text-center text-2xl font-normal leading-8 tracking-[-1px] whitespace-normal transition-colors lg:min-h-[56px] lg:w-[322px] lg:px-4 lg:py-4 ${
                   i === active
                     ? "bg-primary text-white hover:bg-primary-dark"
                     : "bg-neutral-300 text-black hover:bg-secondary-100 hover:text-white"
@@ -102,10 +105,10 @@ export default function RoomsSection() {
               sizes="100vw"
             />
 
-            {/* Overlay: card + desktop controls (Hero-style shell on lg — Figma ~313-30050) */}
-            <div className="pointer-events-none absolute inset-0 flex flex-col justify-between p-5 lg:flex-row lg:items-end lg:justify-between">
-              {/* Description card */}
-              <div className="pointer-events-auto flex max-w-full flex-col gap-4 self-start rounded-2xl bg-neutral-300 p-6 lg:max-w-[435px] lg:self-auto lg:p-8">
+            {/* Overlay: mobile 10px; lg 20px (p-5) */}
+            <div className="pointer-events-none absolute inset-0 flex flex-col justify-between p-[10px] lg:flex-row lg:items-end lg:justify-between lg:p-5">
+              {/* Description card — mobile max 338px / fill; desktop max 435px */}
+              <div className="pointer-events-auto flex w-full max-w-[338px] flex-col gap-4 self-start rounded-2xl bg-neutral-300 p-4 lg:max-w-[435px] lg:self-auto lg:p-8">
                 <p className="text-base leading-6 text-secondary-300">
                   {rooms[active].description}
                 </p>
@@ -176,7 +179,7 @@ export default function RoomsSection() {
             </div>
 
             {/* Mobile / tablet: Hero-style arrows at L/R, dots centered (max horizontal gap) */}
-            <div className="pointer-events-auto absolute inset-x-3 bottom-3 z-10 flex min-h-10 items-center justify-between lg:hidden">
+            <div className="pointer-events-auto absolute inset-x-[10px] bottom-[10px] z-10 flex min-h-10 items-center justify-between lg:hidden">
               <button
                 type="button"
                 onClick={goPrevRoom}

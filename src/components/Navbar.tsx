@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white">
-      <nav className="flex items-center justify-between px-6 lg:px-10 py-6 h-[80px] lg:h-[100px]">
+      <nav className="flex h-[80px] items-center justify-between px-4 py-6 sm:px-6 lg:h-[100px] lg:px-10">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <Image
@@ -82,7 +82,7 @@ export default function Navbar() {
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 bg-white ${mobileOpen ? "max-h-[400px] border-t border-neutral-300" : "max-h-0"}`}
       >
-        <div className="flex flex-col px-6 py-4 gap-4">
+        <div className="flex flex-col gap-4 px-4 py-4 sm:px-6">
           {navLinks.map((link) => (
             <Link
               key={link.label}

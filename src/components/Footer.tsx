@@ -29,7 +29,10 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer id="contact" className="w-full bg-white px-6 lg:px-10 py-10">
+    <footer
+      id="contact"
+      className="w-full bg-white px-4 py-10 sm:px-6 lg:px-10"
+    >
       <div className="bg-neutral-200 rounded-[20px] p-6 lg:p-8 flex flex-col lg:flex-row gap-8 lg:gap-6 lg:items-end">
         {/* Left column */}
         <div className="flex flex-col gap-8 flex-1">

@@ -27,7 +27,10 @@ const guides = [
 
 export default function GuidesSection() {
   return (
-    <section id="guides" className="w-full bg-white px-6 lg:px-10 pt-20 pb-10">
+    <section
+      id="guides"
+      className="w-full bg-white px-4 pt-20 pb-10 sm:px-6 lg:px-10"
+    >
       <div className="flex flex-col gap-10 lg:gap-12 items-end">
         <div className="w-full">
           <h2 className="text-[40px] leading-[56px] tracking-[-1px] text-black font-normal">

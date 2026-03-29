@@ -27,3 +27,86 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* —— The NUHO Living Experience: 2-col + sticky right + vertical card list (Figma 313-23830 / 313-30149) —— */
+.experience {
+  position: relative;
+  width: 100%;
+  padding: 120px 0;
+  background: var(--color-neutral-100);
+}
+
+.experience-shell {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .experience-shell {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .experience-shell {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* Match card stack height so page scroll + sticky right behave like Figma while left stays readable */
+@media (min-width: 769px) {
+  .experience-left {
+    min-height: calc(3 * 240px + 2 * 24px);
+  }
+}
+
+.experience-right .experience-sticky {
+  position: sticky;
+  top: 120px;
+}
+
+.experience-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.experience .card-item {
+  height: 240px;
+  border-radius: 16px;
+  background: #f5f5f5;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 768px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience .card-item {
+    height: 288px;
+  }
+
+  .experience-right .experience-sticky {
+    position: relative;
+    top: 0;
+  }
+}

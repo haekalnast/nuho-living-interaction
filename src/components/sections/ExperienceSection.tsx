@@ -1,5 +1,12 @@
+"use client";
+
+import { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../ui/Button";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const experiences = [
   {
@@ -23,19 +30,61 @@ const experiences = [
 ];
 
 export default function ExperienceSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const section = sectionRef.current;
+    const list = listRef.current;
+    if (!section || !list) return;
+
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    const ctx = gsap.context(() => {
+      if (reduced) return;
+
+      const items = gsap.utils.toArray<HTMLElement>(
+        list.querySelectorAll(".card-item"),
+      );
+      if (items.length === 0) return;
+
+      gsap.from(items, {
+        opacity: 0,
+        y: 40,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: list,
+          start: "top 80%",
+        },
+      });
+    }, section);
+
+    const refresh = () => ScrollTrigger.refresh();
+    requestAnimationFrame(refresh);
+
+    return () => {
+      ctx.revert();
+    };
+  }, []);
+
   return (
     <section
       id="experience"
-      className="w-full bg-white px-4 pb-10 sm:px-6 lg:px-10"
+      ref={sectionRef}
+      className="experience"
+      aria-label="The NUHO Living Experience"
     >
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-4">
-        {/* Left column - sticky heading */}
-        <div className="lg:w-[680px] lg:shrink-0 lg:pr-20">
-          <div className="lg:sticky lg:top-[120px] flex flex-col gap-6 lg:pt-[200px]">
-            <h2 className="text-[40px] leading-[56px] tracking-[-1px] text-black font-normal max-w-[600px]">
+      <div className="experience-shell">
+        <div className="experience-grid">
+          <div className="experience-left flex flex-col items-start gap-6 text-left">
+            <h2 className="max-w-[600px] text-[40px] leading-[56px] font-normal tracking-[-1px] text-black">
               The NUHO Living Experience
             </h2>
-            <p className="text-base leading-6 text-secondary-300 max-w-[600px]">
+            <p className="max-w-[600px] text-base leading-6 text-secondary-300">
               Thoughtfully designed spaces and warm hospitality create a stay
               that blends comfort, culture, and the relaxed rhythm of Bingin.
             </p>
@@ -45,41 +94,35 @@ export default function ExperienceSection() {
               </Button>
             </div>
           </div>
-        </div>
 
-        {/* Right column - stacking cards */}
-        <div className="flex flex-col items-start lg:pb-[180px]">
-          {experiences.map((exp, i) => (
-            <div
-              key={exp.title}
-              className={`lg:sticky flex flex-col items-center justify-end w-full lg:w-[664px] ${i === 0 ? "lg:h-[400px]" : "lg:h-[440px]"} ${i < experiences.length - 1 ? "lg:mb-[-180px]" : ""}`}
-              style={{ top: `${120 + i * 20}px` }}
-            >
-              <div className="bg-neutral-300 rounded-2xl p-6 lg:p-8 flex flex-col gap-6 w-full">
-                {/* Icon */}
-                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center p-2">
-                  <Image
-                    src={exp.icon}
-                    alt=""
-                    width={32}
-                    height={32}
-                    className="w-8 h-8"
-                    unoptimized
-                  />
-                </div>
-
-                {/* Text */}
-                <div className="flex flex-col gap-4">
-                  <h3 className="text-[32px] leading-[40px] tracking-[-1px] text-black font-normal">
-                    {exp.title}
-                  </h3>
-                  <p className="text-base leading-6 text-secondary-300 max-w-[600px]">
-                    {exp.description}
-                  </p>
-                </div>
+          <div className="experience-right">
+            <div className="experience-sticky">
+              <div ref={listRef} className="experience-card-list">
+                {experiences.map((exp) => (
+                  <article key={exp.title} className="card-item">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary p-2">
+                      <Image
+                        src={exp.icon}
+                        alt=""
+                        width={32}
+                        height={32}
+                        className="h-8 w-8"
+                        unoptimized
+                      />
+                    </div>
+                    <div className="flex min-h-0 flex-1 flex-col gap-3">
+                      <h3 className="shrink-0 text-[32px] font-normal leading-[40px] tracking-[-1px] text-black">
+                        {exp.title}
+                      </h3>
+                      <p className="min-h-0 text-base leading-6 text-secondary-300 line-clamp-3 lg:line-clamp-2">
+                        {exp.description}
+                      </p>
+                    </div>
+                  </article>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

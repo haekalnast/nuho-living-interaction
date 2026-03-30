@@ -91,14 +91,14 @@ export default function WhatDefinesSection() {
         </div>
 
         <div className="hidden lg:flex lg:min-h-[900px] lg:flex-row lg:items-stretch lg:gap-6">
-          <div className="w-full shrink-0 lg:w-[672px]">
+          <div className="w-full shrink-0 lg:w-[672px] xl:flex-1 xl:min-w-0 xl:w-full">
             <div className="relative h-[546px] w-full overflow-hidden rounded-[20px] lg:h-full">
               <Image
                 src={SECTION_IMAGE_SRC}
                 alt="NUHO Living boutique interior"
                 fill
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 672px"
+                sizes="(max-width: 1024px) 100vw, (max-width: 1279px) 672px, 50vw"
               />
             </div>
           </div>

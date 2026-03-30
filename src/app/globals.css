@@ -70,6 +70,12 @@ body {
   }
 }
 
+@media (min-width: 1280px) {
+  .experience-shell {
+    max-width: none;
+  }
+}
+
 .experience-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

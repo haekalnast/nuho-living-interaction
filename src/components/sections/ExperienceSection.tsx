@@ -65,11 +65,11 @@ export default function ExperienceSection() {
     >
       <div className="experience-shell">
         <div className="experience-grid">
-          <div className="experience-left flex flex-col items-start gap-6 text-left">
-            <h2 className="max-w-[600px] text-[32px] leading-[40px] tracking-[-1px] font-normal text-black lg:text-[40px] lg:leading-[56px]">
+          <div className="experience-left flex min-w-0 flex-col items-start gap-6 text-left xl:w-full">
+            <h2 className="max-w-[600px] text-[32px] leading-[40px] tracking-[-1px] font-normal text-black lg:text-[40px] lg:leading-[56px] xl:max-w-none">
               The NUHO Living Experience
             </h2>
-            <p className="max-w-[600px] text-base leading-6 text-secondary-300">
+            <p className="max-w-[600px] text-base leading-6 text-secondary-300 xl:max-w-none">
               Thoughtfully designed spaces and warm hospitality create a stay
               that blends comfort, culture, and the relaxed rhythm of Bingin.
             </p>
@@ -80,7 +80,7 @@ export default function ExperienceSection() {
             </div>
           </div>
 
-          <div className="experience-right">
+          <div className="experience-right min-w-0 xl:w-full">
             <div className="experience-card-list">
               {experiences.map((exp, i) => (
                 <article

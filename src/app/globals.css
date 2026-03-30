@@ -14,6 +14,18 @@
   --color-secondary-500: #434343;
 
   --font-sans: var(--font-open-sans);
+
+  /* Figma: Heading/H2/Mobile, Heading/H2/Desktop */
+  --text-heading-h2-mobile: 1.5rem;
+  --text-heading-h2-mobile--line-height: 2rem;
+  --text-heading-h2-desktop: 2rem;
+  --text-heading-h2-desktop--line-height: 2.5rem;
+
+  /* Figma: Heading/H3/Mobile, Heading/H3/Desktop */
+  --text-heading-h3-mobile: 1.25rem;
+  --text-heading-h3-mobile--line-height: 1.75rem;
+  --text-heading-h3-desktop: 1.5rem;
+  --text-heading-h3-desktop--line-height: 2rem;
 }
 
 html {

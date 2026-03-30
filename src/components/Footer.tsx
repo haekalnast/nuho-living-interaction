@@ -1,14 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { WHATSAPP_HREF } from "@/constants/contact";
-
-const footerLinks = [
-  { label: "About Us", href: "#about" },
-  { label: "Our Rooms", href: "#rooms" },
-  { label: "Experience", href: "#experience" },
-  { label: "Guides", href: "#guides" },
-  { label: "Contact Us", href: "#contact" },
-];
+import { SITE_NAV_LINKS } from "@/constants/navigation";
 
 const socialLinks = [
   {
@@ -108,7 +101,7 @@ export default function Footer() {
 
         {/* Right column - nav links */}
         <div className="flex flex-wrap gap-6 lg:gap-12 items-center">
-          {footerLinks.map((link) => (
+          {SITE_NAV_LINKS.map((link) => (
             <Link
               key={link.label}
               href={link.href}

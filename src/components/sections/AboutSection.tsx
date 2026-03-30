@@ -20,7 +20,7 @@ export default function AboutSection() {
               comfort, design, and the calm rhythm of coastal Bali.
             </p>
             <div>
-              <Button variant="secondary" href="#about">
+              <Button variant="secondary" href="/about">
                 Learn More
               </Button>
             </div>
